@@ -17,9 +17,13 @@ export default makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
-  fileInput: {
-    width: '97%',
+  buttonInput: {
+    backgroundColor: "#A9A9A9",
+    width: '100%',
     margin: '10px 0',
+    color: "#111111",
+    padding: "6px 5px",
+    textAlign: "left"
   },
   buttonSubmit: {
     marginBottom: 10,

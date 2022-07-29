@@ -86,21 +86,29 @@ const Form = ({ currentId, setCurrentId }) => {
           fullWidth 
           value={atletaData.idAtleta} 
           onChange={(e) => setAtletaData({ ...atletaData, idAtleta: e.target.value })} />
+        
         <TextField 
           name="tags" 
           variant="outlined" 
           label="Tags (separado por virgula)" 
           fullWidth value={atletaData.tags} 
           onChange={(e) => setAtletaData({ ...atletaData, tags: e.target.value.split(',') })} />
+        
         <TextField 
           name="time" 
           variant="outlined" 
           label="Time ou Equipe" 
           fullWidth value={atletaData.time} 
           onChange={(e) => setAtletaData({ ...atletaData, time: e.target.value})} />
-        <div className={classes.fileInput}>
-          <FileBase type="file" multiple={false} onDone={({ base64 }) => setAtletaData({ ...atletaData, selectedFile: base64 })} />
+        
+        <div className={classes.buttonInput}>
+          <FileBase 
+            type="file" 
+            multiple={false} 
+            onDone={({ base64 }) => setAtletaData({ ...atletaData, selectedFile: base64 })}
+            multiple={false}/>
         </div>
+        
         <Button 
           className={classes.buttonSubmit} 
           variant="contained" 
@@ -109,6 +117,7 @@ const Form = ({ currentId, setCurrentId }) => {
           type="submit" 
           fullWidth>Submit
         </Button>
+        
         <Button 
           variant="contained" 
           color="secondary" 

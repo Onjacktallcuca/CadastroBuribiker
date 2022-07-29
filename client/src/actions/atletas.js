@@ -14,22 +14,16 @@ export const getAtletas = () => async (dispatch) => {
 
 export const createAtleta = (atleta) => async (dispatch) => {
   try {
-    console.log("Atletas: " + atleta);
     const { data } = await api.createAtleta(atleta);
-    console.log("2");
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     console.log(error.message);
-    console.log(error);
-    
-    
   }
 };
 
 export const updateAtleta = (id, atleta) => async (dispatch) => {
   try {
     const { data } = await api.updateAtleta(id, atleta);
-
     dispatch({ type: UPDATE, payload: data });
   } catch (error) {
     console.log(error.message);
@@ -39,7 +33,6 @@ export const updateAtleta = (id, atleta) => async (dispatch) => {
 export const likeAtleta = (id) => async (dispatch) => {
   try {
     const { data } = await api.likeAtletas(id);
-
     dispatch({ type: LIKE, payload: data });
   } catch (error) {
     console.log(error.message);

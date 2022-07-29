@@ -20,16 +20,20 @@ const App = () => {
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color='transparent' >
-        <Typography className={classes.heading} variant="h2" align="center">Cadastro de atletas - 2º Desafio MTB Buritama</Typography>
+        <Typography className={classes.heading} variant="h3" align="center">Cadastro de atletas</Typography><br/>
+      </AppBar>
+      <AppBar className={classes.appBar} position="static" color='transparent' >
+      <Typography className={classes.heading} variant="h5" align="left">2° Desafio de MTB - Prefeitura de Buritama - 2022</Typography><br/>
         <img className={classes.image} src={logo} alt="icon" height="60" />
       </AppBar>
+      
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-            <Grid item xs={12} sm={8}>
+            <Grid item xs={12} sm={9}>
               <Atletas setCurrentId={setCurrentId} />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
               <Form currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>
           </Grid>

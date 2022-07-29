@@ -23,26 +23,30 @@ const Atleta = ({ atleta, setCurrentId }) => {
       />
       
       <div className={classes.overlay}>
-        <Typography variant="h6">{atleta.nome}</Typography>
+        <Typography variant="h4">{atleta.nome}</Typography>
         <Typography variant="body2">{moment(atleta.createdAt).fromNow()}</Typography>
       </div>
+
       <div className={classes.overlay2}>
         <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(atleta._id)}>
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
+
+      <Typography className={classes.title} gutterBottom variant="h5" component="h2">{atleta.nome}</Typography>
+
+      <div className={classes.details}>
+        <Typography variant="body2" color="textSecondary" component="h2">{"Equipe: " + atleta.time}</Typography>
+      </div>
+
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary" component="h2">{atleta.tags.map((tag) => `#${tag} `)}</Typography>
       </div>
 
-      <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary" component="h2">{atleta.time}</Typography>
-      </div>
-
-      <Typography className={classes.title} gutterBottom variant="h5" component="h2">{atleta.nome}</Typography>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">{atleta.rh}</Typography>
       </CardContent>
+      
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" 
                 onClick={() => dispatch(likeAtleta(atleta._id))}>
